@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>ActiveJS - Users</title>
+
+	<script src="../samples/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../latest/active.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="config/database.js" type="text/javascript" charset="utf-8"></script>
+	<script src="config/routes.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="models/pet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="models/user.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="views/elements/users/form.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/elements/users/item.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/elements/users/list.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/users/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/elements/pets/form.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/elements/pets/item.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/elements/pets/list.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/pets/edit.js" type="text/javascript" charset="utf-8"></script>
+	<script src="views/pets/index.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="controllers/users_controller.js" type="text/javascript" charset="utf-8"></script>
+	<script src="controllers/pets_controller.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+
+	<h1>ActiveJS</h1>
+
+	<h2>Users</h2>
+
+	<div id="users"></div>
+
+	<h2>Pets</h2>
+
+	<div id="pets"></div>
+
+	<script type="text/javascript" charset="utf-8">
+		var UsersController = new UsersController(document.getElementById('users'));
+		UsersController.index();
+
+		var PetsController = new PetsController(document.getElementById('pets'));
+		PetsController.index();
+	</script>
+</body>
+</html>

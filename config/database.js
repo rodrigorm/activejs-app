@@ -1,0 +1,1 @@
+ActiveRecord.connect(ActiveRecord.Adapters.Gears,'users_pets');
