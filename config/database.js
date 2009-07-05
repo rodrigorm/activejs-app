@@ -1,1 +1,1 @@
-ActiveRecord.connect(ActiveRecord.Adapters.Gears,'users_pets');
+ActiveRecord.connect(ActiveRecord.Adapters.InMemory);

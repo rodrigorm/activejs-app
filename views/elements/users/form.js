@@ -25,7 +25,7 @@ var ElementsUsersFormView = ActiveView.create(function ElementsUsersFormView() {
 				name: this.userName.value
 			}
 		}
-		UsersController.save(params);
+		dispatcher.dispatch('/users/save', params);
 
 		this.set('id', null);
 		this.userName.value = '';

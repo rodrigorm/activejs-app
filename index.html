@@ -10,6 +10,9 @@
 	<script src="../samples/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../latest/active.js" type="text/javascript" charset="utf-8"></script>
 
+	<script src="../mvc/libs/router.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../mvc/dispatcher.js" type="text/javascript" charset="utf-8"></script>
+
 	<script src="config/database.js" type="text/javascript" charset="utf-8"></script>
 	<script src="config/routes.js" type="text/javascript" charset="utf-8"></script>
 
@@ -43,11 +46,9 @@
 	<div id="pets"></div>
 
 	<script type="text/javascript" charset="utf-8">
-		var UsersController = new UsersController(document.getElementById('users'));
-		UsersController.index();
-
-		var PetsController = new PetsController(document.getElementById('pets'));
-		PetsController.index();
+		var dispatcher = new Dispatcher();
+		dispatcher.dispatch('/users', {}, document.getElementById('users'));
+		dispatcher.dispatch('/pets', {}, document.getElementById('pets'));
 	</script>
 </body>
 </html>

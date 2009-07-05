@@ -46,7 +46,7 @@ var ElementsPetsFormView = ActiveView.create(function ElementsPetsFormView() {
 				user_id: this.petUserId.value
 			}
 		}
-		PetsController.save(params);
+		dispatcher.dispatch('/pets/save', params, document.getElementById('pets'));
 
 		this.set('id', null);
 		this.petName.value = '';

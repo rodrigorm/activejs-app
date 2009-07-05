@@ -16,17 +16,17 @@ var ElementsPetsItemView = ActiveView.create(function ElementsPetsItemView() {
 
 	$(this.editLink).click(ActiveSupport.bind(function(e) {
 		e.preventDefault();
-		PetsController.edit({
+		dispatcher.dispatch('/pets/edit', {
 			id: this.get('id')
-		});
+		}, document.getElementById('pets'));
 	}, this));
 
 	$(this.deleteLink).click(ActiveSupport.bind(function(e) {
 		if (confirm('Delete ' + this.get('name') + '?')) {
 			e.preventDefault();
-			PetsController.remove({
+			dispatcher.dispatch('/pets/remove', {
 				id: this.get('id')
-			});
+			}, document.getElementById('pets'));
 		}
 	}, this));
 

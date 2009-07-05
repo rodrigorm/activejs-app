@@ -7,7 +7,9 @@ var ElementsUsersItemView = ActiveView.create(function ElementsUsersItemView() {
 			this.name = span(), 
 			this.editLink = a({href: '#'}, '[edit]'), 
 			this.deleteLink = a({href: '#'}, '[x]'), 
-			(new ElementsPetsListView({pets: this.scope.getPetList({synchronize: true})})).container
+			new ElementsPetsListView({
+				pets: this.scope.getPetList({synchronize: true})
+			})
 		);
 	}
 	with (this.binding) {
@@ -17,17 +19,17 @@ var ElementsUsersItemView = ActiveView.create(function ElementsUsersItemView() {
 
 	$(this.editLink).click(ActiveSupport.bind(function(e) {
 		e.preventDefault();
-		UsersController.edit({
+		dispatcher.dispatch('/users/edit', {
 			id: this.get('id')
-		});
+		}, document.getElementById('users'));
 	}, this));
 
 	$(this.deleteLink).click(ActiveSupport.bind(function(e) {
 		if (confirm('Delete ' + this.get('name') + '?')) {
 			e.preventDefault();
-			UsersController.remove({
+			dispatcher.dispatch('/users/remove', {
 				id: this.get('id')
-			});
+			}, document.getElementById('users'));
 		}
 	}, this));
 
